@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -12,6 +14,12 @@ public class Functionality extends TrelloBase{
 
 	public static Response createBoard(String boardname) {
 		
+//		if(!verifyBoardNameForUniqueness(boardname)) {
+//			boardname = boardname + createrandomstring()
+//			System.out.println("Board name is not unique. Please reexecute with unique name.");
+//			throw Expection()
+			
+//		}		
 		
 		String path = "/1/boards/";
 
@@ -22,7 +30,7 @@ public class Functionality extends TrelloBase{
 			.when()
 				.post(path)
 			.then()
-				.log().all()
+				//.log().all()
 				.extract().response();
 		
 	}
@@ -89,6 +97,60 @@ public class Functionality extends TrelloBase{
 					.delete(path)
 				.then()
 					.extract().response();
+		
+	}
+
+	public static String getToDOListID(String boardid) {
+		
+		String path = "/1/boards/{id}/lists";
+		String todolistid = null;
+		
+		Response r = RestAssured
+			.given()
+				.spec(commonspec)
+				.pathParam("id", boardid)
+			.when()
+				.get(path)
+			.then()
+				.extract().response();
+		
+		List<Map<String,?>> maps = r.jsonPath().getList("");
+		
+		for (Map<String, ?> map : maps) {
+			if(map.get("name").equals("To Do")) {
+				todolistid = (String) map.get("id");
+			}
+		}
+		System.out.println("To DO List ID is: "+todolistid);
+		
+		return todolistid;
+	}
+
+	public static Response createNewCard(String todoidlist, String summary, String description) {
+
+		String path = "/1/cards";
+		
+//		String payload = "{\n"
+//				+ "	\"name\":\""+summary+"\",\n"
+//				+ "	\"desc\":\""+description+"\"\n"
+//				+ "}";
+		
+		JSONObject payload = new JSONObject();
+		payload.put("name", summary);
+		payload.put("desc", description);
+		
+		
+		return RestAssured
+			.given()
+				.spec(commonspec)
+				.queryParam("idList", todoidlist)
+				.body(payload.toString())
+			.when()
+				.post(path)
+			.then()
+				.extract().response();
+		
+		
 		
 	}
 }

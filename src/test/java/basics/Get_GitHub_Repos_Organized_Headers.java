@@ -31,7 +31,7 @@ public class Get_GitHub_Repos_Organized_Headers {
 			
 			//assertions	//assert
 			.then()
-				.log().everything()
+				.log().headers()
 				.assertThat().statusCode(200)
 				.assertThat().body("[1].name", Matchers.equalToIgnoringCase("JPMCRestAssured"));
 	}

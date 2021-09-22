@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="trello.Get_All_Boards_For_A_User_Test">
+      <class name="trello.Create_Card_Test">
         <methods>
-          <include name="testBoardsForAUser"/>
+          <include name="setUp"/>
+          <include name="testCreationOfCardInANewBoard"/>
         </methods>
-      </class> <!-- trello.Get_All_Boards_For_A_User_Test -->
+      </class> <!-- trello.Create_Card_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -28,8 +28,7 @@ public class Test_Get_Countries_By_Name_And_List_One {
 				.extract().response();
 		
 		
-		//2. Print all details of Object 2
-		
+		//2. Print all details of Object 2	
 		System.out.println("Second Object is: "+r.jsonPath().getString("[1]"));
 		
 		System.out.println(r.jsonPath().getMap("[1]"));
