@@ -2,6 +2,7 @@ package trello;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -16,11 +17,8 @@ public class Functionality extends TrelloBase{
 
 		return RestAssured
 			.given()
-				//.header("Content-Type", "application/json")
-				.contentType(ContentType.JSON)
+				.spec(commonspec)
 				.queryParam("name", boardname)
-				.queryParam("key", "2b1a625928ec953e7723375d93f8a51d")
-				.queryParam("token", "654bd7b2c61f3d7b98b07c05e4f461262258727c8c3f4c30d51e58b349d4e808")
 			.when()
 				.post(path)
 			.then()
@@ -35,17 +33,62 @@ public class Functionality extends TrelloBase{
 		boardnames = RestAssured
 		.given()
 			//.header("Content-Type", "application/json")
-			.contentType(ContentType.JSON)
-			.queryParam("key", "2b1a625928ec953e7723375d93f8a51d")
-			.queryParam("token", "654bd7b2c61f3d7b98b07c05e4f461262258727c8c3f4c30d51e58b349d4e808")
+			.spec(commonspec)
 		.when()
 			.get("/1/members/me/boards")
 		.then()
-			//.log().all()
+			.log().all()
 			.extract().response().jsonPath().getList("name");
 		
 		System.out.println(boardnames);
 		
 		return boardnames;
+	}
+
+	public static String getBoardID(String boardname) {
+		String boardid = null;
+		
+		Response r = getAllBoardsResponses();
+		
+		//$ - means start from the very top of the response
+		//"" - means start from he very top of the response
+		//. - means start from he very top of the response
+		List<Map<String,?>> maps = r.jsonPath().getList("");
+		
+		for (Map<String, ?> map : maps) {
+			if(map.get("name").equals("Board_11")) {
+				boardid = (String) map.get("id");
+			}
+		}
+		
+		return boardid;
+	}
+
+	private static Response getAllBoardsResponses() {
+		
+		return RestAssured
+		.given()
+			//.header("Content-Type", "application/json")
+			.spec(commonspec)
+		.when()
+			.get("/1/members/me/boards")
+		.then()
+			.log().all()
+			.extract().response();
+	}
+
+	public static Response deleteBoard(String boardid) {
+		
+		String path = "/1/boards/{id}";
+		
+		return RestAssured
+				.given()
+					.pathParam("id", boardid)
+					.spec(commonspec)
+				.when()
+					.delete(path)
+				.then()
+					.extract().response();
+		
 	}
 }

@@ -13,7 +13,7 @@ public class Get_All_Boards_For_A_User_Test extends TrelloBase{
 		
 		List<String> boardnames = Functionality.getAllBoards();
 	
-		Assert.assertTrue(boardnames.contains("Board_11"));
+		Assert.assertTrue(boardnames.contains("Board_1"));
 		
 		List<String> expected = new ArrayList<String>();
 		expected.add("Board44");
