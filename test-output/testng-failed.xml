@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restcountries.Get_Countries_By_Name_Test">
+      <class name="trello.Get_All_Boards_For_A_User_Test">
         <methods>
-          <include name="testNumberOfCountries"/>
+          <include name="testBoardsForAUser"/>
         </methods>
-      </class> <!-- restcountries.Get_Countries_By_Name_Test -->
+      </class> <!-- trello.Get_All_Boards_For_A_User_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
