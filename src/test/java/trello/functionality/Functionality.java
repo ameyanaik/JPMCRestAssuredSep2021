@@ -74,6 +74,27 @@ public class Functionality extends TrelloBase{
 		}
 		
 		return boardid;
+		
+	}
+	
+	public String getBoardID_mock(String boardname) {
+		String boardid = null;
+		
+		Response r = getAllBoardsResponses();
+		
+		//$ - means start from the very top of the response
+		//"" - means start from he very top of the response
+		//. - means start from he very top of the response
+		List<Map<String,?>> maps = r.jsonPath().getList("");
+		
+		for (Map<String, ?> map : maps) {
+			if(map.get("name").equals(boardname)) {
+				boardid = (String) map.get("id");
+			}
+		}
+		
+		//return boardid;
+		return null;
 	}
 
 	private static Response getAllBoardsResponses() {
@@ -105,6 +126,32 @@ public class Functionality extends TrelloBase{
 	}
 
 	public static String getToDOListID(String boardid) {
+		
+		String path = "/1/boards/{id}/lists";
+		String todolistid = null;
+		
+		Response r = RestAssured
+			.given()
+				.spec(commonspec)
+				.pathParam("id", boardid)
+			.when()
+				.get(path)
+			.then()
+				.extract().response();
+		
+		List<Map<String,?>> maps = r.jsonPath().getList("");
+		
+		for (Map<String, ?> map : maps) {
+			if(map.get("name").equals("To Do")) {
+				todolistid = (String) map.get("id");
+			}
+		}
+		System.out.println("To DO List ID is: "+todolistid);
+		
+		return todolistid;
+	}
+	
+	public String getToDOListID_mock(String boardid) {
 		
 		String path = "/1/boards/{id}/lists";
 		String todolistid = null;
