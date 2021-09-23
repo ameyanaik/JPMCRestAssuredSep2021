@@ -65,7 +65,7 @@ public class Functionality extends TrelloBase{
 		List<Map<String,?>> maps = r.jsonPath().getList("");
 		
 		for (Map<String, ?> map : maps) {
-			if(map.get("name").equals("Board_11")) {
+			if(map.get("name").equals(boardname)) {
 				boardid = (String) map.get("id");
 			}
 		}
@@ -82,7 +82,7 @@ public class Functionality extends TrelloBase{
 		.when()
 			.get("/1/members/me/boards")
 		.then()
-			.log().all()
+			//.log().all()
 			.extract().response();
 	}
 
