@@ -1,10 +1,13 @@
-package trello;
+package trello.tests;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import trello.common.TrelloBase;
+import trello.functionality.Functionality;
 
 public class Get_All_Boards_For_A_User_Test extends TrelloBase{
 	

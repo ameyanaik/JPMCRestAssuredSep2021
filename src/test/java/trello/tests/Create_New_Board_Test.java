@@ -1,9 +1,10 @@
-package trello;
+package trello.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import trello.functionality.Functionality;
 
 public class Create_New_Board_Test {
 	

@@ -1,10 +1,12 @@
-package trello;
+package trello.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import trello.common.TrelloBase;
+import trello.functionality.Functionality;
 
 public class Create_Card_Test extends TrelloBase{
 	

@@ -1,4 +1,4 @@
-package trello;
+package trello.functionality;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import trello.common.TrelloBase;
 
 public class Functionality extends TrelloBase{
 
