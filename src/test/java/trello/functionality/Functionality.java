@@ -39,12 +39,15 @@ public class Functionality extends TrelloBase{
 	public static List<String> getAllBoards() {
 		List<String> boardnames = new ArrayList<>();
 		
+		String path = "/1/members/{id}/boards";
+		
 		boardnames = RestAssured
 		.given()
 			//.header("Content-Type", "application/json")
 			.spec(commonspec)
+			.pathParam("id", "ameyanaik4")
 		.when()
-			.get("/1/members/me/boards")
+			.get(path)
 		.then()
 			.log().all()
 			.extract().response().jsonPath().getList("name");

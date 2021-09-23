@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="trello.tests.Create_Card_DataDriven_Test">
+      <class name="auth.OAuth2Example">
         <methods>
-          <include name="setUp"/>
-          <include name="testCreationOfMultipleCardsInAnExistingBoard" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="testOAuth2"/>
         </methods>
-      </class> <!-- trello.tests.Create_Card_DataDriven_Test -->
+      </class> <!-- auth.OAuth2Example -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

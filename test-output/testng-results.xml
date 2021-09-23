@@ -1,143 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28336" started-at="2021-09-23T11:54:21 IST" finished-at="2021-09-23T11:54:50 IST">
+  <suite name="Default suite" duration-ms="4308" started-at="2021-09-23T13:29:55 IST" finished-at="2021-09-23T13:29:59 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28336" started-at="2021-09-23T11:54:21 IST" finished-at="2021-09-23T11:54:50 IST">
-      <class name="trello.tests.Create_Card_DataDriven_Test">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="setUp" is-config="true" duration-ms="4859" started-at="2021-09-23T11:54:16 IST" finished-at="2021-09-23T11:54:21 IST">
+    <test name="Default test" duration-ms="4308" started-at="2021-09-23T13:29:55 IST" finished-at="2021-09-23T13:29:59 IST">
+      <class name="auth.OAuth2Example">
+        <test-method status="PASS" signature="testOAuth2()[pri:0, instance:auth.OAuth2Example@2781e022]" name="testOAuth2" duration-ms="4215" started-at="2021-09-23T13:29:55 IST" finished-at="2021-09-23T13:29:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="12191" started-at="2021-09-23T11:54:25 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:37 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning Java]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning Java Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="2623" started-at="2021-09-23T11:54:37 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:40 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning TestNG]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning TestNG Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="2562" started-at="2021-09-23T11:54:40 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:43 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning RestAssured]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning RestAssured Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="2762" started-at="2021-09-23T11:54:43 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:45 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning Cucumber]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning Cucumber Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="2168" started-at="2021-09-23T11:54:45 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:48 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning Mockito]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning Mockito Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-        <test-method status="PASS" signature="testCreationOfMultipleCardsInAnExistingBoard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.tests.Create_Card_DataDriven_Test@1a1d6a08]" name="testCreationOfMultipleCardsInAnExistingBoard" duration-ms="2099" started-at="2021-09-23T11:54:48 IST" data-provider="getTestDataFromExcel" finished-at="2021-09-23T11:54:50 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Board_1453]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Learning XYZ]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Learning XYZ Description]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreationOfMultipleCardsInAnExistingBoard -->
-      </class> <!-- trello.tests.Create_Card_DataDriven_Test -->
+        </test-method> <!-- testOAuth2 -->
+      </class> <!-- auth.OAuth2Example -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
